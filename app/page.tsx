@@ -149,8 +149,7 @@ export default function Home() {
 
           {/* Company */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
-            // Replace the emoji div with this SVG:
-<div style={{
+          <div style={{
   width: 52, height: 52,
   background: 'rgba(255,255,255,0.08)',
   borderRadius: 10,
