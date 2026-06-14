@@ -149,27 +149,16 @@ export default function Home() {
 
           {/* Company */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
-          <div style={{
-  width: 52, height: 52,
-  background: 'rgba(255,255,255,0.08)',
-  borderRadius: 10,
-  border: '1px solid rgba(255,255,255,0.12)',
-  display: 'flex', alignItems: 'center', justifyContent: 'center',
-  padding: 10,
-}}>
   <img 
     src="https://companieslogo.com/img/orig/SPCX_BIG-1a377c5a.png"
     alt="SpaceX"
-    style={{ width: 30, height: 30, objectFit: 'contain' }}
+    style={{ width: 52, height: 52, objectFit: 'contain' }}
   />
-  <svg viewBox="0 0 148 19" fill="white" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%' }}>
-    <path d="M6.5 0C2.9 0 0 2.9 0 6.5S2.9 13 6.5 13H8v6h2v-6h1.5C15.1 13 18 10.1 18 6.5S15.1 0 11.5 0h-5zm0 2h5C13.9 2 16 4.1 16 6.5S13.9 11 11.5 11H6.5C4.1 11 2 8.9 2 6.5S4.1 2 6.5 2z"/>
-  </svg>
-</div>            <div>
-              <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.08em', textTransform: 'uppercase' as const }}>NYSE · SPCE-X</div>
-              <div style={{ fontSize: 22, fontWeight: 700, letterSpacing: '-0.02em' }}>SpaceX</div>
-            </div>
-          </div>
+  <div>
+    <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.08em', textTransform: 'uppercase' as const }}>NYSE · SPCE-X</div>
+    <div style={{ fontSize: 22, fontWeight: 700, letterSpacing: '-0.02em' }}>SpaceX</div>
+  </div>
+</div>
 
           {/* Headline */}
           <h1 style={{
