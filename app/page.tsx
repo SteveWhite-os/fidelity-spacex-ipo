@@ -71,7 +71,7 @@ export default function Home() {
         backdropFilter: 'blur(12px)',
       }}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-  <img src="/logo.png" alt="Fidelity" style={{ height: 32, objectFit: 'contain' }} />
+  <img src="/logo.png" alt="Fidelity" style={{ height: 48, objectFit: 'contain' }} />
 </div>
         <div style={{ display: 'flex', gap: 32, fontSize: 13, color: 'rgba(255,255,255,0.5)' }}>
           <span style={{ cursor: 'pointer' }}>IPO Center</span>
