@@ -54,13 +54,36 @@ export default function Home() {
       fontFamily: "'Inter', -apple-system, sans-serif",
       overflowX: 'hidden',
     }}>
+      <style>{`
+        * { box-sizing: border-box; }
+        .nav-links { display: flex; gap: 32px; font-size: 13px; color: rgba(255,255,255,0.5); }
+        .nav-padding { padding: 20px 48px; }
+        .hero-content { padding: 0 48px; }
+        .pledge-box { max-width: 480px; }
+        .pledge-row { display: flex; gap: 10px; }
+        .pledge-row button { white-space: nowrap; }
+        .stats-row { display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 44px; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+        @media (max-width: 768px) {
+          .nav-links { display: none !important; }
+          .nav-padding { padding: 16px 20px !important; }
+          .hero-content { padding: 0 20px !important; }
+          .pledge-box { max-width: 100% !important; }
+          .pledge-row { flex-direction: column !important; }
+          .pledge-row button { width: 100% !important; white-space: normal !important; text-align: center !important; }
+          .stats-row { flex-direction: column !important; gap: 20px !important; }
+          .info-grid { grid-template-columns: 1fr !important; }
+          .footer-inner { flex-direction: column !important; text-align: center !important; }
+          .sign-in-btn { padding: 8px 14px !important; font-size: 12px !important; }
+        }
+      `}</style>
 
       {/* NAV */}
-      <nav style={{
+      <nav className="nav-padding" style={{
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: '20px 48px',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         position: 'fixed',
         top: 0,
@@ -71,14 +94,14 @@ export default function Home() {
         backdropFilter: 'blur(12px)',
       }}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-  <img src="/logo.png" alt="Fidelity" style={{ height: 42, objectFit: 'contain' }} />
-</div>
-        <div style={{ display: 'flex', gap: 32, fontSize: 13, color: 'rgba(255,255,255,0.5)' }}>
+          <img src="/logo.png" alt="Fidelity" style={{ height: 42, objectFit: 'contain' }} />
+        </div>
+        <div className="nav-links">
           <span style={{ cursor: 'pointer' }}>IPO Center</span>
           <span style={{ cursor: 'pointer' }}>Research</span>
           <span style={{ cursor: 'pointer' }}>Portfolio</span>
         </div>
-        <button style={{
+        <button className="sign-in-btn" style={{
           background: '#1A6B3C',
           color: '#fff',
           border: 'none',
@@ -99,7 +122,6 @@ export default function Home() {
         paddingTop: 80,
         overflow: 'hidden',
       }}>
-        {/* Background image via Unsplash */}
         <div style={{
           position: 'absolute', inset: 0,
           backgroundImage: 'url(https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?w=1600&q=80)',
@@ -112,12 +134,13 @@ export default function Home() {
           background: 'linear-gradient(to right, rgba(5,10,20,0.95) 45%, rgba(5,10,20,0.3) 100%)',
         }} />
 
-        <div style={{
+        <div className="hero-content" style={{
           position: 'relative',
           maxWidth: 1200,
           margin: '0 auto',
-          padding: '0 48px',
           width: '100%',
+          paddingTop: 40,
+          paddingBottom: 60,
         }}>
 
           {/* Badge */}
@@ -142,20 +165,20 @@ export default function Home() {
 
           {/* Company */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
-  <img 
-    src="https://companieslogo.com/img/orig/SPCX.D-1de7e0a1.png"
-    alt="SpaceX"
-    style={{ width: 52, height: 52, objectFit: 'contain' }}
-  />
-  <div>
-    <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.08em', textTransform: 'uppercase' as const }}>NYSE · SPCE-X</div>
-    <div style={{ fontSize: 22, fontWeight: 700, letterSpacing: '-0.02em' }}>SpaceX</div>
-  </div>
-</div>
+            <img
+              src="https://companieslogo.com/img/orig/SPCX_BIG-1a377c5a.png"
+              alt="SpaceX"
+              style={{ width: 52, height: 52, objectFit: 'contain' }}
+            />
+            <div>
+              <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.08em', textTransform: 'uppercase' as const }}>NYSE · SPCE-X</div>
+              <div style={{ fontSize: 22, fontWeight: 700, letterSpacing: '-0.02em' }}>SpaceX</div>
+            </div>
+          </div>
 
           {/* Headline */}
           <h1 style={{
-            fontSize: 'clamp(40px, 6vw, 72px)',
+            fontSize: 'clamp(36px, 6vw, 72px)',
             fontWeight: 800,
             letterSpacing: '-0.04em',
             lineHeight: 1.05,
@@ -181,12 +204,7 @@ export default function Home() {
           </p>
 
           {/* Key Stats */}
-          <div style={{
-            display: 'flex',
-            gap: 32,
-            marginBottom: 44,
-            flexWrap: 'wrap' as const,
-          }}>
+          <div className="stats-row">
             {[
               { label: 'Estimated Price Range', value: '$95 – $110' },
               { label: 'Allocation Draw Date', value: 'July 14, 2025' },
@@ -200,18 +218,17 @@ export default function Home() {
           </div>
 
           {/* PLEDGE BOX */}
-          <div style={{
+          <div className="pledge-box" style={{
             background: 'rgba(255,255,255,0.04)',
             border: '1px solid rgba(255,255,255,0.1)',
             borderRadius: 16,
             padding: 28,
-            maxWidth: 480,
             backdropFilter: 'blur(8px)',
           }}>
             {step === 'hero' || step === 'amount' ? (
               <>
                 <div style={{ fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.5)', marginBottom: 10, letterSpacing: '0.04em', textTransform: 'uppercase' as const }}>Your Pledge Amount</div>
-                <div style={{ display: 'flex', gap: 10 }}>
+                <div className="pledge-row">
                   <div style={{ position: 'relative', flex: 1 }}>
                     <span style={{
                       position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)',
@@ -233,7 +250,6 @@ export default function Home() {
                         fontSize: 18,
                         fontWeight: 600,
                         outline: 'none',
-                        boxSizing: 'border-box' as const,
                       }}
                     />
                   </div>
@@ -248,7 +264,6 @@ export default function Home() {
                       fontSize: 14,
                       fontWeight: 700,
                       cursor: 'pointer',
-                      whiteSpace: 'nowrap' as const,
                       letterSpacing: '-0.01em',
                     }}
                   >
@@ -281,7 +296,6 @@ export default function Home() {
                       color: '#fff',
                       fontSize: 15,
                       outline: 'none',
-                      boxSizing: 'border-box' as const,
                     }}
                   />
                 </div>
@@ -297,17 +311,12 @@ export default function Home() {
                           flex: 1,
                           padding: '12px',
                           borderRadius: 10,
-                          border: paymentMethod === method
-                            ? '1px solid #4ADE80'
-                            : '1px solid rgba(255,255,255,0.12)',
-                          background: paymentMethod === method
-                            ? 'rgba(74,222,128,0.1)'
-                            : 'rgba(255,255,255,0.04)',
+                          border: paymentMethod === method ? '1px solid #4ADE80' : '1px solid rgba(255,255,255,0.12)',
+                          background: paymentMethod === method ? 'rgba(74,222,128,0.1)' : 'rgba(255,255,255,0.04)',
                           color: paymentMethod === method ? '#4ADE80' : 'rgba(255,255,255,0.6)',
                           fontSize: 14,
                           fontWeight: 600,
                           cursor: 'pointer',
-                          textTransform: 'capitalize' as const,
                         }}
                       >
                         {method === 'crypto' ? '₿ Crypto' : '🏦 Bank Transfer'}
@@ -362,16 +371,8 @@ export default function Home() {
       </section>
 
       {/* INFO SECTION */}
-      <section style={{
-        maxWidth: 1200,
-        margin: '0 auto',
-        padding: '100px 48px',
-      }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: 24,
-        }}>
+      <section style={{ maxWidth: 1200, margin: '0 auto', padding: '80px 24px' }}>
+        <div className="info-grid">
           {[
             {
               icon: '🛰️',
@@ -406,19 +407,16 @@ export default function Home() {
       {/* FOOTER */}
       <footer style={{
         borderTop: '1px solid rgba(255,255,255,0.06)',
-        padding: '32px 48px',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
+        padding: '32px 24px',
         maxWidth: 1200,
         margin: '0 auto',
         fontSize: 12,
         color: 'rgba(255,255,255,0.25)',
-        flexWrap: 'wrap' as const,
-        gap: 12,
       }}>
-        <span>© 2025 Fidelity Investments. All rights reserved.</span>
-        <span>This is a simulated IPO experience. Not financial advice.</span>
+        <div className="footer-inner">
+          <span>© 2025 Fidelity Investments. All rights reserved.</span>
+          <span>This is a simulated IPO experience. Not financial advice.</span>
+        </div>
       </footer>
     </main>
   )
