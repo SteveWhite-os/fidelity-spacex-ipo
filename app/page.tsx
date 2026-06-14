@@ -70,16 +70,9 @@ export default function Home() {
         background: 'rgba(5,10,20,0.92)',
         backdropFilter: 'blur(12px)',
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <div style={{
-            width: 32, height: 32,
-            background: 'linear-gradient(135deg, #1A6B3C, #0D4A2A)',
-            borderRadius: 6,
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontWeight: 800, fontSize: 14, color: '#fff',
-          }}>F</div>
-          <span style={{ fontWeight: 700, fontSize: 17, letterSpacing: '-0.02em' }}>Fidelity</span>
-        </div>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+  <img src="/logo.png" alt="Fidelity" style={{ height: 32, objectFit: 'contain' }} />
+</div>
         <div style={{ display: 'flex', gap: 32, fontSize: 13, color: 'rgba(255,255,255,0.5)' }}>
           <span style={{ cursor: 'pointer' }}>IPO Center</span>
           <span style={{ cursor: 'pointer' }}>Research</span>
