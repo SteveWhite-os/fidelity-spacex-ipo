@@ -150,7 +150,7 @@ export default function Home() {
           {/* Company */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
   <img 
-    src="https://companieslogo.com/img/orig/SPCX_BIG-1a377c5a.png"
+    src="https://companieslogo.com/img/orig/SPCX.D-1de7e0a1.png"
     alt="SpaceX"
     style={{ width: 52, height: 52, objectFit: 'contain' }}
   />
