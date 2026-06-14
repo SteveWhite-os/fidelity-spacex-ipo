@@ -158,7 +158,7 @@ export default function Home() {
   padding: 10,
 }}>
   <img 
-    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/SpaceX-Logo-Xonly.svg/200px-SpaceX-Logo-Xonly.svg.png"
+    src="https://companieslogo.com/img/orig/SPCX_BIG-1a377c5a.png"
     alt="SpaceX"
     style={{ width: 30, height: 30, objectFit: 'contain' }}
   />
